@@ -1,6 +1,9 @@
 package Hashing;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import util.*;
 
 /**
@@ -108,16 +111,33 @@ public class HashMain {
       }
     }catch(FileNotFoundException e){
       String fileList = "";
-      for (int i = 0; i < files.length; i++)
-    	  fileList += files[i] + (i == (files.length - 1) ? "" : ", ");
-      
-      if(ver == 3)
-        Out.error("HashMain", "Hash Exception(version check): \n\r" +
-              "[CheckRevision] Files Not Found/Accessible (" + Constants.prods[prod-1] + ") (" + 
-              fileList + ", " + Constants.ArchivePath + dll.replaceAll("mpq", "dll") + ")");
-      else
-        Out.error("HashMain", "Hash Exception(version check): \n\r" +
-              "[CheckRevision] Files Not Found/Accessible (" + Constants.prods[prod-1] + ") (" + fileList + ")");
+      for (int i = 0; i < files.length; i++) {
+        if (files[i].isEmpty())
+          continue;
+
+        Path path = Paths.get(files[i]);
+
+        if (!Files.exists(path)) {
+          if (!fileList.isEmpty())
+            fileList += ", ";
+
+          fileList += files[i];
+        }
+      }
+
+      if (ver == 3) {
+        String fullArchivePath = Constants.ArchivePath + dll.replaceAll("mpq", "dll");
+
+        if (!Files.exists(Paths.get(fullArchivePath))) {
+          if (!fileList.isEmpty())
+            fileList += ", ";
+
+            fileList += fullArchivePath;
+        }
+      }
+
+      Out.error("HashMain", "Hash Exception(version check): \n\r" +
+            "[CheckRevision] Files Not Found/Accessible (" + Constants.prods[prod-1] + ") (" + fileList + ")");
     }catch(IOException e){
       Out.error("HashMain", "Hash Exception(version check): [CheckRevision] IOException (" + Constants.prods[prod-1] + ")");
     }
