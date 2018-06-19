@@ -27,7 +27,7 @@ public class BNLSServer extends Thread{
 	private boolean listening=false;
 
 	public BNLSServer() {
-		Out.println("JBLS"," Server thread created.");
+		Out.println("JBLS","Server thread created.");
 	}
 
 	//Starts the Server Listening process (infinatly blocking loop)
