@@ -136,7 +136,7 @@ public class HashMain {
         }
       }
 
-      Out.error("HashMain", "Hash Exception(version check): \n\r" +
+      Out.error("HashMain", "Hash Exception(version check): \r\n" +
             "[CheckRevision] Files Not Found/Accessible (" + Constants.prods[prod-1] + ") (" + fileList + ")");
     }catch(IOException e){
       Out.error("HashMain", "Hash Exception(version check): [CheckRevision] IOException (" + Constants.prods[prod-1] + ")");

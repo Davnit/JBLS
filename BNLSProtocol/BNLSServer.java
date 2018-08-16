@@ -39,7 +39,7 @@ public class BNLSServer extends Thread{
 			Out.error("JBLS", "Could not bind port " + Constants.BNLSPort + ". JBLS server is disabled.");
 			return;
 		}catch (IOException e){
-		    Out.error("JBLS","Could not create socket (Port: " + Constants.BNLSPort + ")  - Shutting down JBLS. \n\r"+e.toString());
+		    Out.error("JBLS","Could not create socket (Port: " + Constants.BNLSPort + ")  - Shutting down JBLS. \r\n"+e.toString());
 		    Controller.disableJBLSServer();
 		    return;
 		}

@@ -19,7 +19,7 @@ public class HTTPServer extends Thread{
 	    Out.error("HTTP", "Could not bind port " + Constants.HTTPPort + ". HTTP server is disabled.");
 		return;
 	  }catch (IOException e){
-	    Out.error("HTTP","Could not create socket (Port: " + Constants.HTTPPort + ")  - Shutting down the HTTP server. \n\r"+e.toString());
+	    Out.error("HTTP","Could not create socket (Port: " + Constants.HTTPPort + ")  - Shutting down the HTTP server. \r\n"+e.toString());
 	    return;
 	  }
 	  listening=true;

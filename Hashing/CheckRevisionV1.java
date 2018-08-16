@@ -344,7 +344,7 @@ public class CheckRevisionV1
         }
         return ver;
       }catch(FileNotFoundException e){
-        Out.error("HashMain", "Hash Exception(Exe version): \n\r" +
+        Out.error("HashMain", "Hash Exception(Exe version): \r\n" +
         "[getVersion] File Not Found/Accessible (" + files[0] + ")");
       }catch(IOException e){
         Out.error("HashMain", "Hash Exception(Exe Version): [getVersion] IOException");
