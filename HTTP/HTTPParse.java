@@ -243,7 +243,7 @@ public class HTTPParse extends Thread{
         else if(file.equalsIgnoreCase("/SSHR.zip"))
           sendHashFile("SSHR", Constants.SSHRfiles);
         else if(file.equalsIgnoreCase("/W3DM.zip"))
-          sendHashFile("SSHR", Constants.W3DMfiles);*/
+          sendHashFile("W3DM", Constants.W3DMfiles);*/
         else{
           send404(file);
         }
