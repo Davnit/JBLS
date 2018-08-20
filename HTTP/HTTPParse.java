@@ -76,6 +76,7 @@ public class HTTPParse extends Thread{
     "      <tr><td class=li>JSTR Checks</td><td class=li><jstr></td><td class=li><jstrvb></td></tr>" + CRLF +
     "      <tr><td class=li>W3XP Checks</td><td class=li><war3></td><td class=li><war3vb></td></tr>" + CRLF +
     "      <tr><td class=li>DRTL Checks</td><td class=li><drtl></td><td class=li><drtlvb></td></tr>" + CRLF +
+    "      <tr><td class=li>W3DM Checks</td><td class=li><w3dm></td><td class=li><w3dmvb></td></tr>" + CRLF +
     "    </table>" + CRLF +
     "    <table width=550 align=center cellpadding=3 cellspacing=0 border=0>" + CRLF +
     "      <tr><td align=left colspan=2><span class=subheader>Additional Information</span></td></tr>" + CRLF +
@@ -143,6 +144,7 @@ public class HTTPParse extends Thread{
        	  page = page.replaceAll("<drtl>", String.valueOf(HashMain.CRevChecks[8]));
        	  page = page.replaceAll("<dshr>", String.valueOf(HashMain.CRevChecks[9]));
        	  page = page.replaceAll("<sshr>", String.valueOf(HashMain.CRevChecks[10]));
+       	  page = page.replaceAll("<w3dm>", String.valueOf(HashMain.CRevChecks[11]));
        	  page = page.replaceAll("<starvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_STARCRAFT - 1]));
        	  page = page.replaceAll("<w2bnvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_WAR2BNE - 1]));
        	  page = page.replaceAll("<d2dvvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_DIABLO2 - 1]));
@@ -152,6 +154,7 @@ public class HTTPParse extends Thread{
        	  page = page.replaceAll("<drtlvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_DIABLO - 1]));
        	  page = page.replaceAll("<dshrvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_DIABLOSHAREWARE - 1]));
        	  page = page.replaceAll("<sshrvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_STARCRAFTSHAREWARE - 1]));
+       	  page = page.replaceAll("<w3dmvb>", hex(Constants.IX86verbytes[Constants.PRODUCT_WAR3DEMO - 1]));
        	  page = page.replaceAll("<auth>", String.valueOf(Constants.requireAuthorization));
        	  page = page.replaceAll("<build>", Constants.build);
        	  page = page.replaceAll("<news>", Constants.strNews[0]+"<br \\>"+Constants.strNews[1]+"<br \\>"+Constants.strNews[2]+"<br \\>"+Constants.strNews[3]+"<br \\>"+Constants.strNews[4]);
@@ -238,7 +241,9 @@ public class HTTPParse extends Thread{
         else if(file.equalsIgnoreCase("/DSHR.zip"))
           sendHashFile("DSHR", Constants.DSHRfiles);
         else if(file.equalsIgnoreCase("/SSHR.zip"))
-          sendHashFile("SSHR", Constants.SSHRfiles);*/
+          sendHashFile("SSHR", Constants.SSHRfiles);
+        else if(file.equalsIgnoreCase("/W3DM.zip"))
+          sendHashFile("SSHR", Constants.W3DMfiles);*/
         else{
           send404(file);
         }

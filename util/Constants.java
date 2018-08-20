@@ -17,7 +17,8 @@ public final class Constants{
     public static final byte PRODUCT_DIABLO            = 0x09;
     public static final byte PRODUCT_DIABLOSHAREWARE   = 0x0A;
     public static final byte PRODUCT_STARCRAFTSHAREWARE= 0x0B;
-    public static String[] prods = {"STAR", "SEXP", "W2BN", "D2DV", "D2XP", "JSTR", "WAR3", "W3XP", "DRTL", "DSHR", "SSHR"};
+    public static final byte PRODUCT_WAR3DEMO          = 0x0C;
+    public static String[] prods = {"STAR", "SEXP", "W2BN", "D2DV", "D2XP", "JSTR", "WAR3", "W3XP", "DRTL", "DSHR", "SSHR", "W3DM"};
     public static String[][] IX86files = {
         {"IX86/STAR/", "Starcraft.exe",       "Storm.dll",    "Battle.snp",   "STAR.bin"},
         {"IX86/STAR/", "Starcraft.exe",       "Storm.dll",    "Battle.snp",   "STAR.bin"},
@@ -29,9 +30,10 @@ public final class Constants{
         {"IX86/WAR3/", "war3.exe",            "Storm.dll",    "Game.dll",     "WAR3.bin"},
         {"IX86/DRTL/", "Diablo.exe",          "Storm.dll",    "Battle.snp",   "DRTL.bin"},
         {"IX86/DSHR/", "Diablo_s.exe",        "Storm.dll",    "Battle.snp",   "DSHR.bin"},
-        {"IX86/SSHR/", "Starcraft_s.exe",     "Storm.dll",    "Battle.snp",   "SSHR.bin"}
+        {"IX86/SSHR/", "Starcraft_s.exe",     "Storm.dll",    "Battle.snp",   "SSHR.bin"},
+        {"IX86/W3DM/", "War3Demo.exe",        "Storm.dll",    "Game.dll",     "W3DM.bin"}
     };
-    public static int[] IX86verbytes = {0xD3, 0xD3, 0x4f, 0x0e, 0x0e, 0xa9, 0x1E, 0x1E, 0x2a, 0x2a, 0xa5};    
+    public static int[] IX86verbytes = {0xD3, 0xD3, 0x4f, 0x0e, 0x0e, 0xa9, 0x1E, 0x1E, 0x2a, 0x2a, 0xa5, 0x01};
     
     public static String ArchivePath = "DLLs/";
     public static String LogFilePath = "./Logs/";
@@ -58,7 +60,7 @@ public final class Constants{
     public static String   BotNetUsername = "";
     public static String   BotNetPassword = "";
     public static String   BotNetServer   = "www.valhallalegends.com";
-	
+    
     public static boolean LogStats         = false;
     public static String  StatsUsername    = "";
     public static String  StatsPassword    = "";
