@@ -247,15 +247,15 @@ public class PE
 
 				/* Combine the data and return it. */
 				if (byteorder)
-					return   	buffer[0x3C] << 24 |
-								buffer[0x3E] << 16 |
-								buffer[0x38] << 8  |
-								buffer[0x3A] << 0;
-				else
-					return   	buffer[0x3A] << 24 |
-								buffer[0x38] << 16 |
-								buffer[0x3E] << 8  |
-					    	    buffer[0x3C] << 0;
+					return   	(buffer[0x3C] & 0xFF) << 24 |
+								(buffer[0x3E] & 0xFF) << 16 |
+								(buffer[0x38] & 0xFF) << 8  |
+								(buffer[0x3A] & 0xFF) << 0;
+				else 
+					return   	(buffer[0x3A] & 0xFF) << 24 |
+								(buffer[0x38] & 0xFF) << 16 |
+								(buffer[0x3E] & 0xFF) << 8  |
+					    	    (buffer[0x3C] & 0xFF) << 0;
 			}
 		}
 
