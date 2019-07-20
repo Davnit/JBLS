@@ -19,7 +19,7 @@ import util.*;
 public class HashMain {
 
   //Only compilied once(as needed), then stored
-  public  static int    CRevChecks[] = new int[0x0B];
+  public static int CRevChecks[] = new int[0x0C];
 
   public static int WAR3KeysHashed=0;
   public static int STARKeysHashed=0;

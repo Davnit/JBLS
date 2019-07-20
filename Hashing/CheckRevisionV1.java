@@ -336,7 +336,9 @@ public class CheckRevisionV1
       int ver = 0;
       try{
         ver = PE.getVersion(files[0], false);
-        if(prod == Constants.PRODUCT_WARCRAFT3 || prod == Constants.PRODUCT_THEFROZENTHRONE){
+        if(prod == Constants.PRODUCT_WARCRAFT3 ||
+           prod == Constants.PRODUCT_THEFROZENTHRONE ||
+           prod == Constants.PRODUCT_WAR3DEMO){
           ver = (ver & 0xFF000000) >>> 24 |
                 (ver & 0x00FF0000) >> 8 |
                 (ver & 0x0000FF00) << 8 |

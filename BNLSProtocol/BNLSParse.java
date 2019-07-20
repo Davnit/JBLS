@@ -87,6 +87,7 @@ public class BNLSParse{
    * private static final byte PRODUCT_DIABLO             = 0x09; //Fully Supported
    * private static final byte PRODUCT_DIABLOSHAREWARE    = 0x0A; //Fully Supported
    * private static final byte PRODUCT_STARCRAFTSHAREWARE = 0x0B; //Fully Supported
+   * private static final byte PRODUCT_WAR3DEMO           = 0x0C; //Fully Supported
    */
   
   /*Flag definitions for BNLS_CDKEY_EX*/
